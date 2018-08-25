@@ -9,3 +9,8 @@ Python
 ## Design
 - Token class: Specifies the different types of tokens we support. Example `'INTEGERS', 'PLUS', 'EOF'`
 - Interpreter class: That actually goes through the program classifying each token at a time.
+
+## Format
+- `"3+5"` or `"6+2"`
+- Integer followed by a plus followed by another integer
+
