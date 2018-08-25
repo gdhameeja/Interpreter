@@ -7,5 +7,5 @@ Python
 - Python itself is an interpreted language.
 
 ## Design
-- Token class: Specifies the different types of tokens we support. Example 'INTEGERS', 'PLUS', 'EOF'
+- Token class: Specifies the different types of tokens we support. Example `'INTEGERS', 'PLUS', 'EOF'`
 - Interpreter class: That actually goes through the program classifying each token at a time.
