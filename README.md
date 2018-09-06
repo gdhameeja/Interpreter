@@ -3,14 +3,6 @@ Interpreter is a computer program that reads the source code written in a partic
 On the other hand compiler is a computer program that converts the source code written in one language into a lower level language which can then be run to execute the instructions.
 
 ## Language of implementation:
-Python
-- Python itself is an interpreted language.
+Java
 
-## Design
-- Token class: Specifies the different types of tokens we support. Example `'INTEGERS', 'PLUS', 'EOF'`
-- Interpreter class: That actually goes through the program classifying each token at a time.
-
-## Format
-- `"3+5"` or `"6+2"`
-- Integer followed by a plus followed by another integer
-
+Based on book by Ronal Mak

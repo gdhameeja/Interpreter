@@ -4,7 +4,7 @@ import wci.intermediate.SymTab;
 import wci.intermediate.ICode;
 
 /**
- *<h1> Parser </h1>
+ * <h1> Parser </h1>
  * <p> A language independent class. The implementation will be provided by langage
  * specific subclasses.
  */
