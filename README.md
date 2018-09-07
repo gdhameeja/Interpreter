@@ -6,3 +6,13 @@ On the other hand compiler is a computer program that converts the source code w
 Java
 
 Based on book by Ronal Mak
+
+
+### My understanding
+- Compiler has two ends - frontend and a backend.
+- Frontend does the initial translation and syntax checking etc.
+- Frontend consists of Parser, Scanner, Source and Token.
+- Parser controls the frontend execution.
+- Parser calls scanner methods to get next token and/or current token.
+- Scanner tokenizes the the source program.
+- Source represents the source program.
