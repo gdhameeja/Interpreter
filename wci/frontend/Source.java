@@ -5,6 +5,11 @@
  *   as readline sets currentPos to -1 and nextChar increments the currentPos. 
  */
 
+/**
+ * <h1> Source </h1>
+ * <p> The framework class that represents the source program. </p>
+ */
+
 package wci.frontend;
 
 import java.io.BufferedReader;
