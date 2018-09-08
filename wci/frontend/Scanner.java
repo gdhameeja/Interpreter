@@ -6,7 +6,7 @@ package wci.frontend;
  * by language specific sub-classes. </p>
  */
 
-class Scanner{
+public abstract class Scanner{
     private Source source;   // source
     private Token currentToken;   // current token
 

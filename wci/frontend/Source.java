@@ -15,7 +15,7 @@ package wci.frontend;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-class Source{
+public abstract class Source{
     public static final char EOL = '\n';       // end-of-line character
     public static final char EOF = 0;          // end-of-file character
     
