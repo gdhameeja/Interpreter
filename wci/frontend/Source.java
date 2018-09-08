@@ -94,6 +94,12 @@ public abstract class Source{
 	if(line != null){
 	    lineNun++;
 	}
+
+	// Sends a source line message containing the line number
+	// and the line text to all the listeners.
+	if(line != null){
+	    sendMessage(new Message(SOURCE_LINE, new Object[] {lineNum, line}));
+	}
     }
 
     /**

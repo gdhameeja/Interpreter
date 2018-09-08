@@ -33,7 +33,7 @@ public abstract class Token{
      * beyond the last token character.
      * @throws Exception if error occurred.
      */
-    public void extract(){
+    public void extract() throws Exception{
 	text = Character.toString(currentChar());
 	value = null;
 
