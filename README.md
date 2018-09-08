@@ -29,11 +29,11 @@ Intermediate code is predigested form of source code that backend can work with 
 ### Messages
 Messages allow for parser/scanner or any other entity to report information.
 For example, parser may want to report a syntax error. Similarly, a source may want to report a line read.
-- Any MessageProducer (parser/source etc) does not care who receives the message or what they do with the message.
+- Any `MessageProducer` (parser/source etc) does not care who receives the message or what they do with the message.
 
 ##### Power of Interfaces
-- In our case if someone wants to be a message producer, they need to implement Message Producer interface and implement the methods it offers.
-- After implementing the interface, the Parser/Source may not define the methods themselves, they delegate control to MessageHandler class which defines these functionalities. It is like saying, I want to be a message producer, so I implement the MessageProducer interface and its methods, but I let MessageHandler take care of the functionalities for me. I love OOP.
+- In our case if someone wants to be a message producer, they need to implement `MessageProducer` interface and implement the methods it offers.
+- After implementing the interface, the `Parser` or `Source` may not define the methods themselves, they delegate control to `MessageHandler` class which defines these functionalities. It is like saying, I want to be a message producer, so I implement the `MessageProducer` interface and its methods, but I let `MessageHandler` take care of the functionalities for me. I love OOP.
 
 ##### Power of delegation
 - The functionality of a message producer is actually defined in `MessageHandler` class. This allows other classes to use `MessageHandler`. This is more useful than defining the functionality in the message producer such as `Parser` or `Source` as now any other class that wants to use this functionality doesn't need to extend from `Parser` or `Source`. 
