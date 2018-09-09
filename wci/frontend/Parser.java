@@ -75,7 +75,7 @@ public abstract class Parser implements MessageProducer{
 
     /**
      * Notify listeners after setting the message.
-     * @param message the message to set.
+     * @param message the message to send.
      */
     public void sendMessage(Message message){
 	messageHandler.sendMessage(message);
