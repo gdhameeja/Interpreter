@@ -5,7 +5,7 @@ package wci.frontend;
  * <p> The generic end-of-file token </p>
  */
 
-public class EOFToken extends Token{
+public class EofToken extends Token{
 
     /**
      * Constructor
