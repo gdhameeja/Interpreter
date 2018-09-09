@@ -92,7 +92,7 @@ public abstract class Source{
 	line = reader.readline();   // null when at the end of the source
 	currentPos = -1;
 	if(line != null){
-	    lineNun++;
+	    lineNum++;
 	}
 
 	// Sends a source line message containing the line number

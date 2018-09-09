@@ -49,7 +49,7 @@ public abstract class Scanner{
      * @return the current char from the source.
      * @throws Exception if an error occurred.
      */
-    public char currentChar(){
+    public char currentChar() throws Exception{
 	return source.currentChar();
     }
 
