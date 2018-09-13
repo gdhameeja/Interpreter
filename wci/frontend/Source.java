@@ -15,7 +15,7 @@ package wci.frontend;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public abstract class Source{
+public abstract class Source implements MessageProducer{
     public static final char EOL = '\n';       // end-of-line character
     public static final char EOF = 0;          // end-of-file character
     
@@ -24,6 +24,12 @@ public abstract class Source{
     private int lineNum;                       // current source line number
     private int currentPos;                    // current source line position
 
+    protected static MessageHandler messageHandler; // message handler delegate
+
+    static{
+	mesageHandler = new MessageHandler;
+    }
+    
     public Source(BufferedReader reader){
 	this.reader = reader;
 	this.currentPos = -2;                  // set to -2 to read the first source line
@@ -116,5 +122,29 @@ public abstract class Source{
 		throw ex;
 	    }
 	}
+    }
+
+     /**
+     * Add a listener to the listener list.
+     * @param listener the listener to add.
+     */
+    public void addMessageListener(MessageListener listener){
+	messageHandler.addMessageListener(listener);
+    }
+
+     /** 
+     * Remove a listener to the listener list.
+     * @param listener the listener to remove.
+     */
+    public void removeMessageListener(MessageListener listener){
+	messageHandler.removeMessageListener(listener);
+    }
+
+     /**
+     * Notify listeners after setting the message.
+     * @param message the message to set.
+     */
+    public void sendMessage(Message message){
+	messageHandler.sendMessage(message);
     }
 }

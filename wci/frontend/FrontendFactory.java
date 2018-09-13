@@ -5,6 +5,9 @@ package wci.frontend;
  * <p> A factory class that creates parsers for a specific language </p>
  */
 
+import wci.frontend.Parser;
+import wci.frontend.Source;
+
 public class FrontendFactory{
 
     /**

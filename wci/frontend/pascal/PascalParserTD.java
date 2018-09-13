@@ -35,7 +35,7 @@ public class PascalParserTD extends Parser{
 
 	// Send the parser summary message.
 	float elapsedTime = (System.currentTimeMillis() - startTime)/1000f;
-	// 1000f as 1 sec = 1000 millisec ; so dividing by 1000f will give us time in seconds.
+	// 1000f becuase 1 sec = 1000 millisec;so dividing by 1000f will give us time in seconds (floating point number).
 
 	sendMessage(new Message(PARSER_SUMMARY, new Number[] {
 		    token.getLineNumber(), getErrorCount(), elapsedTime

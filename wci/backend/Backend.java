@@ -8,7 +8,7 @@ package wci.backend;
 public abstract class Backend implements MessageProducer{
     protected static MessageHandler messageHandler;   // Message handler delegate.
     static{
-	messageHandler = new messageHandler();
+	messageHandler = new MessageHandler();
     }
     protected ICode icode;   // intermediate code
     protected SymTab symTab;  // symbol table
