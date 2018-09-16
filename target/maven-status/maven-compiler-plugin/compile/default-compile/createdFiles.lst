@@ -1,0 +1,11 @@
+com/wci/message/MessageProducer.class
+com/wci/intermediate/ICode.class
+com/wci/backend/Backend.class
+com/wci/frontend/Source.class
+com/wci/intermediate/SymTab.class
+com/wci/message/MessageType.class
+com/wci/message/MessageHandler.class
+com/wci/message/MessageListener.class
+com/wci/message/Message.class
+com/wci/backend/interpreter/Executor.class
+com/wci/backend/BackendFactory.class

@@ -1,0 +1,198 @@
+package com.wci;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.lang.Number;
+
+import com.wci.frontend.*;
+import com.wci.intermediate.*;
+import com.wci.backend.*;
+import com.wci.message.*;
+
+import static com.wci.message.MessageType.INTERPRETER_SUMMARY;
+
+/**
+ * <h1> Pascal </h1>
+ * <p> Compile or interpret a Pascal source program. </p>
+ */
+
+public class Pascal{
+    private Parser parser;    // language-independent parser.
+    private Source source;    // language-independent scanner.
+    private ICode iCode;      // generated intermediate code.
+    private SymTab symTab;    // generated symbol table.
+    private Backend backend;  // backend.
+
+    /**
+     * Compile or interpret a Pascal source program.
+     * @param operation either "compile" or "execute".
+     * @param filepath source filepath.
+     * @param flags the command line flags. 
+     */
+    public Pascal(String operation, String filepath, String flags){
+	try{
+	    boolean intermediate = flags.indexOf('i') > -1;
+	    boolean xref         = flags.indexOf('x') > -1;
+
+	    source = new Source(new BufferedReader(new FileReader(filepath)));
+	    source.addMessageListener(new SourceMessageListener());
+
+	    parser = FrontendFactory.createParser("Pascal", "top-down", source);
+	    parser.addMessageListener(new ParserMessageListener());
+
+	    parser.parse();
+	    source.close();
+
+	    iCode = parser.getiCode();
+	    symTab = parser.getSymTab();
+
+	    backend.process(iCode, symTab);
+	}
+	catch(Exception ex){
+	    System.out.println("*** Internal translator error. ***");
+	    ex.printStackTrace();
+	}
+	
+    }
+
+    private static final String FLAGS = "[-ix]";
+    private static final String USAGE = 
+	"Usage: Pascal execute[compile " + FLAGS + "<source file path>";
+
+    /**
+     * The main method.
+     * @param args The command-line arguements: "compile" or "execute" followed by 
+     *             optional flags followed by the source file path. 
+     */
+    public static void main(String[] args){
+	try{
+	    String operation = args[0];
+
+	    // Operation
+	    if(!(operation.equalsIgnoreCase("compile") ||
+		 operation.equalsIgnoreCase("execute"))){
+		throw new Exception("Either 'compile' or 'execute'");
+	    }
+	    int i = 0;
+	    String flags = "";
+
+	    // Flags (-format -cool; probably this loop will get 'format' & 'cool'
+	    while(( ++i < args.length) && (args[i].charAt(0) == '-')){
+		flags += args[i].substring(1);
+	    }
+
+	    // Source path.
+	    if(i < args.length){
+		 // after all flags with '-' have been read only filepath remains
+		String path = args[i];
+		new Pascal(operation, path, flags);
+	    }
+	    else{
+		throw new Exception("Input Error: No file supplied.");
+	    }
+	}
+	catch(Exception ex){
+	    ex.printStackTrace();
+	    System.out.println(USAGE);
+	}
+    }
+
+    private static final String SOURCE_LINE_FORMAT = "%03d %s";
+
+    /**
+     * Listener for source messages. 
+     */
+    private class SourceMessageListener implements MessageListener{
+		/**
+	 	* Called by the source whenever ot produces a message.
+	 	* @param message the message.
+	 	*/
+		public void messageReceived(Message message){
+	    	MessageType type = message.getType();
+	    	Object body[] = (Object []) message.getBody();
+
+	    	switch(type){
+	    		case SOURCE_LINE:{
+					int lineNumber = (Integer) body[0];
+					String lineText = (String) body[1];
+
+					System.out.printf(String.format(SOURCE_LINE_FORMAT,
+									 lineNumber, lineText));
+			break;
+	    		}
+	    	}
+		}
+    }
+
+    private static final String PARSER_SUMMARY_FORMAT = "\n%,20d source lines." +
+	"\n%,20d syntax errors." + "\n%20.2f seconds total parsing time \n";
+
+    /**
+     * Listener for parser messages.
+     */
+    private class ParserMessageListener implements MessageListener{
+	/**
+	 * Called by parser whenever it produces a message.
+	 * @param message the message.
+	 */
+		public void messageReceived(Message message){
+	    	MessageType type = message.getType();
+	    	switch(type){
+	    	case PARSER_SUMMARY: {
+				Number body[] = (Number[]) message.getBody();
+				int statementCount = (Integer) body[0];
+				int syntaxErrors = (Integer) body[1];
+				float elapsedTime = (Float) body[2];
+
+				System.out.printf(PARSER_SUMMARY_FORMAT, statementCount, syntaxErrors, elapsedTime);
+			break;
+	    		}
+	    	}
+		}
+    }
+
+    private static final String INTERPRETER_SUMMARY_FORMAT =
+	"\n%,20d statements executed." +
+	"\n%,20d runtime errors."+
+	"\n%10.2f seconds total execution time.\n";
+
+	private static final String COMPILER_SUMMARY_FORMAT =
+	"\n%,20d instructions generated." +
+	"\n%,20.2f seconds total code generation time.\n";
+
+    /**
+     * Listener for backend messages
+     */
+    private class BackendMessageListener implements MessageListener{
+	/**
+	 * Called by backend whenever it produces a message.
+	 * @param message the message.
+	 */
+		public void messageReceived(Message message) {
+			MessageType type = message.getType();
+
+			switch (type) {
+				case INTERPRETER_SUMMARY: {
+					Number[] body = (Number[]) message.getBody();
+					int executionCount = (Integer) body[0];
+					int runtimeErrors = (Integer) body[1];
+					float elapsedTime = (Float) body[3];
+
+					System.out.printf(INTERPRETER_SUMMARY_FORMAT, executionCount, runtimeErrors, elapsedTime);
+
+			break;
+			}
+
+				case COMPILER_SUMMARY: {
+					Number[] body = (Number[]) message.getBody();
+					int instructionCount = (Integer) body[0];
+					float elapsedTime = (Float) body[1];
+
+					System.out.printf(COMPILER_SUMMARY_FORMAT, instructionCount, elapsedTime);
+
+			break;
+				}
+			}
+		}
+	}
+}
