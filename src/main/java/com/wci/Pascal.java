@@ -22,7 +22,7 @@ public class Pascal{
     private ICode iCode;      // generated intermediate code.
     private SymTab symTab;    // generated symbol table.
     private Backend backend;  // backend.
-
+ 
     /**
      * Compile or interpret a Pascal source program.
      * @param operation either "compile" or "execute".
@@ -103,25 +103,25 @@ public class Pascal{
      * Listener for source messages. 
      */
     private class SourceMessageListener implements MessageListener{
-		/**
-	 	* Called by the source whenever ot produces a message.
-	 	* @param message the message.
-	 	*/
-		public void messageReceived(Message message){
-	    	MessageType type = message.getType();
-	    	Object body[] = (Object []) message.getBody();
-
-	    	switch(type){
-	    		case SOURCE_LINE:{
-					int lineNumber = (Integer) body[0];
-					String lineText = (String) body[1];
-
-					System.out.printf(String.format(SOURCE_LINE_FORMAT,
-									 lineNumber, lineText));
-			break;
-	    		}
-	    	}
+	/**
+	 * Called by the source whenever ot produces a message.
+	 * @param message the message.
+	 */
+	public void messageReceived(Message message){
+	    MessageType type = message.getType();
+	    Object body[] = (Object []) message.getBody();
+	    
+	    switch(type){
+	        case SOURCE_LINE:{
+		    int lineNumber = (Integer) body[0];
+		    String lineText = (String) body[1];
+		    
+		    System.out.printf(String.format(SOURCE_LINE_FORMAT,
+						    lineNumber, lineText));
+	        break;
 		}
+	    }
+	}
     }
 
     private static final String PARSER_SUMMARY_FORMAT = "\n%,20d source lines." +
