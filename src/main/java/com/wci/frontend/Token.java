@@ -19,11 +19,11 @@ public class Token{
      * @throws throws Exception if error occurred.
      */
     public Token(Source source) throws Exception{
-	this.source = source;
-	this.lineNum = source.getLineNum();
-	this.position = source.getCurrentPos();
+        this.source = source;
+        this.lineNum = source.getLineNum();
+        this.position = source.getCurrentPos();
 
-	extract();
+        extract();
     }
 
     /**
@@ -34,10 +34,10 @@ public class Token{
      * @throws Exception if error occurred.
      */
     public void extract() throws Exception{
-	text = Character.toString(currentChar());
-	value = null;
+        text = Character.toString(currentChar());
+        value = null;
 
-	nextChar();   // consume the current character.
+        nextChar();   // consume the current character.
     }
 
     /**
@@ -46,7 +46,7 @@ public class Token{
      * @throws Exception if erroc occurred. 
      */
     protected char currentChar() throws Exception{
-	return source.currentChar();
+        return source.currentChar();
     }
 
     /**
@@ -55,7 +55,7 @@ public class Token{
      * @throws Exception if error occurred.
      */
     protected char nextChar() throws Exception{
-	source.nextChar();
+        return source.nextChar();
     }
 
     /**
@@ -64,6 +64,30 @@ public class Token{
      * @throws Exception if an error occurred.
      */
     protected char peekChar() throws Exception{
-	return source.peekChar();
+        return source.peekChar();
+    }
+
+    public TokenType getType() {
+        return type;
+    }
+
+    public Source getSource() {
+        return source;
+    }
+
+    public int getLineNum() {
+        return lineNum;
+    }
+
+    public Object getValue() {
+        return value;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public int getPosition() {
+        return position;
     }
 }

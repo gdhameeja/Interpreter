@@ -14,7 +14,7 @@ public class EofToken extends Token{
      * @throws Exception if an error occurred.
      */
     public EofToken(Source source) throws Exception{
-	    super(source);
+        super(source);
     }
 
     /**
@@ -23,6 +23,6 @@ public class EofToken extends Token{
      * @throws Exception if error occurred.
      */
     public Token extract(Source source) throws Exception{
-	
+        return null;
     }
 }

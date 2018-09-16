@@ -2,6 +2,9 @@ package com.wci.backend.compiler;
 
 import com.wci.intermediate.*;
 import com.wci.backend.*;
+import com.wci.message.*;
+
+import static com.wci.message.MessageType.COMPILER_SUMMARY;
 
 public class CodeGenerator extends Backend{
     

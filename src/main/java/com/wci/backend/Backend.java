@@ -11,7 +11,7 @@ import com.wci.intermediate.*;
 public abstract class Backend implements MessageProducer{
     protected static MessageHandler messageHandler;   // Message handler delegate.
     static{
-	messageHandler = new MessageHandler();
+        messageHandler = new MessageHandler();
     }
     protected ICode icode;   // intermediate code
     protected SymTab symTab;  // symbol table
@@ -21,7 +21,7 @@ public abstract class Backend implements MessageProducer{
      * @param listener the listener to add.
      */
     public void addMessageListener(MessageListener listener){
-	messageHandler.addListener(listener);
+        messageHandler.addListener(listener);
     }
 
     /**
@@ -29,7 +29,7 @@ public abstract class Backend implements MessageProducer{
      * @param listener the listener to remove.
      */
     public void removeMessageListener(MessageListener listener){
-	messageHandler.removeListener(listener);
+        messageHandler.removeListener(listener);
     }
 
     /**
@@ -37,7 +37,7 @@ public abstract class Backend implements MessageProducer{
      * @param message the message to send. 
      */
     public void sendMessage(Message message){
-	messageHandler.sendMessage(message);
+        messageHandler.sendMessage(message);
     }
 
     /**

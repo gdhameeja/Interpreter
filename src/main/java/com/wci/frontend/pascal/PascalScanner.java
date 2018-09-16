@@ -23,7 +23,7 @@ public class PascalScanner extends Scanner{
 	 * @return the next token.
 	 * @throws Exception if error occurred.
 	 */
-	protected Token extractToken() throws Exception{
+	public Token extractToken() throws Exception{
 		Token token;
 
 		// Construct the next token. The current character determines the token type.

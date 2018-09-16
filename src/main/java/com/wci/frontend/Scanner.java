@@ -16,7 +16,7 @@ public abstract class Scanner{
      * @param source the source to be used with this scanner.
      */
     public Scanner(Source source){
-	this.source = source;
+        this.source = source;
     }
 
     /**
@@ -24,7 +24,7 @@ public abstract class Scanner{
      * @return the current token.
      */
     public Token currentToken(){
-	return currentToken;
+        return currentToken;
     }
 
     /**
@@ -33,8 +33,8 @@ public abstract class Scanner{
      * @throws Exception if error occurred.
      */
     public Token nextToken() throws Exception{
-	currentToken = extractToken();
-	return currentToken;
+        currentToken = extractToken();
+        return currentToken;
     }
 
     /**
@@ -51,7 +51,7 @@ public abstract class Scanner{
      * @throws Exception if an error occurred.
      */
     public char currentChar() throws Exception{
-	return source.currentChar();
+        return source.currentChar();
     }
 
     /**
@@ -60,7 +60,7 @@ public abstract class Scanner{
      * @throws Exception if an error occurred.
      */
     public char nextChar() throws Exception{
-	return source.nextChar();
+        return source.nextChar();
     }
 }
 

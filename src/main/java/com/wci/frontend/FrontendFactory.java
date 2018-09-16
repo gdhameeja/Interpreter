@@ -5,30 +5,29 @@ package com.wci.frontend;
  * <p> A factory class that creates parsers for a specific language </p>
  */
 
-import com.wci.frontend.Parser;
-import com.wci.frontend.Source;
-
+import com.wci.frontend.pascal.*;
+import com.wci.frontend.*;
 public class FrontendFactory{
 
-    /**
-     * Creates a parser. 
-     * @param language the name of the source language (e.g. "pascal").
-     * @param type the type of the parser (e.g "top-down").
-     * @param source the source code.
-     * @throws Excpetion if an error occurred.
-     */
+	/**
+	 * Creates a parser.
+	 * @param language the name of the source language (e.g. "pascal").
+	 * @param type the type of the parser (e.g "top-down").
+	 * @param source the source code.
+	 * @throws Exception if an error occurred.
+	 */
 
-    public static Parser createParser(String language, String type, Source source) throws Exception{
-	if(language.equalsIgnoreCase("Pascal") && type.equalIgnoreCase("top-down")){
-	    Scanner scanner = new PascalScanner(source);
+	public static Parser createParser(String language, String type, Source source) throws Exception{
+		if(language.equalsIgnoreCase("Pascal") && type.equalsIgnoreCase("top-down")){
+			Scanner scanner = new PascalScanner(source);
 
-	    return new PascalParserTD(scanner);
+			return new PascalParserTD(scanner);
+		}
+		else if(!language.equalsIgnoreCase("Pascal")){
+			throw new Exception("ParserFactory: Invalid language '" + language + "'");
+		}
+		else{
+			throw new Exception("ParserFactory: Invalid type '" + type + "'");
+		}
 	}
-	else if(!language.equalsIgnoreCase("Pascal")){
-	    throw new Exception("ParserFactory: Invalid language '" + language + "'");
-	}
-	else{
-	    throw new Exception("ParserFactory: Invalid type '" + type + "'");
-	}
-    }
 }

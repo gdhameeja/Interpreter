@@ -15,8 +15,8 @@ public class Message{
      * @param body the message body.
      */
     public Message(MessageType type, Object body){
-	this.type = type;
-	this.body = body;
+        this.type = type;
+        this.body = body;
     }
 
     public MessageType getType() {
