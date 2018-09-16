@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="946a5477-b97b-4ca5-b4f8-d01db35a8951" name="Default Changelist" comment="Error free chap 2 completed">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="946a5477-b97b-4ca5-b4f8-d01db35a8951" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/backend/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/backend/Backend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/backend/BackendFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/backend/BackendFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/backend/compiler/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/backend/compiler/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/backend/interpreter/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/backend/interpreter/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/EofToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/EofToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/FrontendFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/FrontendFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Source.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/pascal/PascalParserTD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/pascal/PascalParserTD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/frontend/pascal/PascalScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/frontend/pascal/PascalScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/message/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/message/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/message/MessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wci/message/MessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wci/message/MessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,12 +27,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="28" />
+          <entry key="md" value="1" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="28" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -67,7 +53,13 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -98,6 +90,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wci/message/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wci/message/MessageHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wci/message/MessageListener.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -165,7 +158,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537094470576" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537094739223" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -191,12 +184,21 @@
       <option name="presentableId" value="Default" />
       <updated>1537046644615</updated>
     </task>
+    <task id="LOCAL-00001" summary="Error free chap 2 completed">
+      <created>1537094637306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537094637306</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18562232" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18562232" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -211,7 +213,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.33924612" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3292683" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -225,6 +227,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Error free chap 2 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error free chap 2 completed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -408,6 +414,9 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
