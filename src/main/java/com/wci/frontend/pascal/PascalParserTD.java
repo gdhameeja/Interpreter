@@ -28,9 +28,25 @@ public class PascalParserTD extends Parser{
 	public void parse() throws Exception{
 		Token token;
 		long startTime = System.currentTimeMillis();
+		try{
+		  // loop over each token until end of file.
+		  while(!((token = nextToken()) instanceof EofToken)){
+		    TokenType tokenType = token.getType();
 
-		while(!((token = nextToken()) instanceof EofToken)){
+		    if(tokenType != ERROR){
 
+		      // Format each token.
+		      sendMessage(new Message(TOKEN, new Object[] {
+			    token.getLineNum(),
+			    token.getPosition(),
+			    tokenType,
+			    token.getText(),
+			    token.getValue()
+			  }));
+		    }
+		    else{
+		      errorHandler.flag(token, (PascalErrorCode) token.getValue(), this)
+		    }
 		}
 
 		// Send the parser summary message.
@@ -40,6 +56,10 @@ public class PascalParserTD extends Parser{
 		sendMessage(new Message(PARSER_SUMMARY, new Number[] {
 				token.getLineNum(), getErrorCount(), elapsedTime
 		}));
+		}
+		catch(java.io.IOException ex){
+		  errorHandler.abortTranslation(IO_ERROR, this);
+		}
 	}
 
 	/**
@@ -47,6 +67,6 @@ public class PascalParserTD extends Parser{
 	 * @return the error count.
 	 */
 	public int getErrorCount(){
-		return 0;
+	  return errorHandler.getErrorCount();
 	}
 }
