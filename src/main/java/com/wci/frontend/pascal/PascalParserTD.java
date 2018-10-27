@@ -3,6 +3,7 @@
 package com.wci.frontend.pascal;
 
 import static com.wci.message.MessageType.PARSER_SUMMARY;
+import static com.wci.message.MessageType.TOKEN;
 
 import com.wci.frontend.*;
 import com.wci.message.*;
@@ -15,6 +16,7 @@ import com.wci.message.*;
  * <p>The top-down Pascal parser.
  */
 public class PascalParserTD extends Parser {
+  protected static PascalErrorHandler errorHandler = new PascalErrorHandler();
 
   /**
    * Constructor.

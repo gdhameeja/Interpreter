@@ -124,7 +124,7 @@ public class Pascal {
       "\n%,20d source lines." + "\n%,20d syntax errors." + "\n%20.2f seconds total parsing time \n";
 
   private static final String TOKEN_FORMAT = ">>> %-15s line=%03d, pos=%2d, text=\"%s\"";
-  private static final int VALUE_FORMAT = ">>>           value=%s";
+  private static final String VALUE_FORMAT = ">>>           value=%s";
 
   private static final int PREFIX_WIDTH = 5;
 
